@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Silka Regular", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background-color: #ede8e8;
+  opacity: 1;
+  border-radius: 12px;
+}
+
+.react-resizable-handle.react-resizable-handle-se {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tite {
+  box-shadow: transparent 0px 0px 0px 2px inset;
+}
