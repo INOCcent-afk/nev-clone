@@ -20,6 +20,10 @@ a {
   box-sizing: border-box;
 }
 
+.react-grid-item {
+  transition: all 500ms ease;
+}
+
 .react-grid-item.react-grid-placeholder {
   background-color: #ede8e8;
   opacity: 1;
@@ -31,6 +35,6 @@ a {
   pointer-events: none;
 }
 
-.tite {
+.box-shadow {
   box-shadow: transparent 0px 0px 0px 2px inset;
 }

@@ -23,21 +23,9 @@ import {
   projectsTabletLayout,
 } from "../layoutGrids/projectsLayout";
 import { useWindowSize } from "../shared-components/useWindowSize";
+import { motion } from "framer-motion";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
-
-// const allDesktopLayout = [
-//   { i: "a", x: 0, y: 0, w: 2, h: 1 },
-//   { i: "b", x: 2, y: 0, w: 1, h: 1 },
-//   { i: "c", x: 1, y: 1, w: 1, h: 1 },
-//   { i: "d", x: 3, y: 2, w: 1, h: 2 },
-//   { i: "e", x: 2, y: 4, w: 1, h: 2 },
-//   { i: "f", x: 3, y: 3, w: 1, h: 1 },
-//   { i: "g", x: 0, y: 1, w: 1, h: 1 },
-//   { i: "h", x: 0, y: 3, w: 2, h: 1 },
-//   { i: "i", x: 0, y: 4, w: 2, h: 1 },
-//   { i: "j", x: 3, y: 4, w: 2, h: 1 },
-// ];
 
 const Home: NextPage = () => {
   const { tab } = useContext(TabbingContext);
@@ -103,8 +91,30 @@ const Home: NextPage = () => {
     return null;
   }
 
+  let isTab1 = tab === 1;
+  let isTab2 = tab === 2 || isTab1;
+  let isTab3 = tab === 3 || isTab1;
+  let isTab4 = tab === 4 || isTab1;
+
   return (
-    <div className="max-w-[400px] md:max-w-[800px] lg:max-w-[1200px] mx-auto">
+    <motion.div
+      variants={{
+        transitionIn: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 0.8,
+          },
+        },
+        initial: {
+          y: 2,
+          opacity: 0,
+        },
+      }}
+      animate="transitionIn"
+      initial="initial"
+      className="max-w-[400px] md:max-w-[800px] lg:max-w-[1200px] mx-auto"
+    >
       <ResponsiveGridLayout
         className="layout text-center"
         breakpoints={{ lg: 1199, md: 996, sm: 768, xs: 480, xxs: 0 }}
@@ -127,67 +137,87 @@ const Home: NextPage = () => {
         rowHeight={rowHeight as number}
       >
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold tite`}
-          key="a"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab2 ? "opacity-100" : "opacity-50"
+          }`}
+          key="face"
         >
           face
         </div>
         <div
-          className="bg-black text-white rounded-xl flex items-center justify-center text-3xl font-bold tite"
-          key="b"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab2 ? "opacity-100" : "opacity-50"
+          }`}
+          key="map"
         >
           map
         </div>
         <div
-          className="bg-black text-white rounded-xl flex items-center justify-center text-3xl font-bold tite"
-          key="c"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab2 ? "opacity-100" : "opacity-50"
+          }`}
+          key="twitter"
         >
           twitter
         </div>
         <div
-          className="bg-black text-white rounded-xl flex items-center justify-center text-3xl font-bold tite"
-          key="d"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab3 ? "opacity-100" : "opacity-50"
+          }`}
+          key="project1"
         >
           1st project
         </div>
         <div
-          className="bg-black text-white rounded-xl flex items-center justify-center text-3xl font-bold tite"
-          key="e"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab3 ? "opacity-100" : "opacity-50"
+          }`}
+          key="project2"
         >
           2nd project
         </div>
         <div
-          className="bg-black text-white rounded-xl flex items-center justify-center text-3xl font-bold tite"
-          key="f"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab1 ? "opacity-100" : "opacity-50"
+          }`}
+          key="toggleMode"
         >
           toggle light mode
         </div>
         <div
-          className="bg-black text-white rounded-xl flex items-center justify-center text-3xl font-bold tite"
-          key="g"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab4 ? "opacity-100" : "opacity-50"
+          }`}
+          key="spotify"
         >
           spotify
         </div>
         <div
-          className="bg-black text-white rounded-xl flex items-center justify-center text-3xl font-bold tite"
-          key="h"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab4 ? "opacity-100" : "opacity-50"
+          }`}
+          key="started"
         >
           how it started
         </div>
         <div
-          className="bg-black text-white rounded-xl flex items-center justify-center text-3xl font-bold tite"
-          key="i"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab3 ? "opacity-100" : "opacity-50"
+          }`}
+          key="project3"
         >
           3rd project yellow
         </div>
         <div
-          className="bg-black text-white rounded-xl flex items-center justify-center text-3xl font-bold tite"
-          key="j"
+          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+            isTab4 ? "opacity-100" : "opacity-50"
+          }`}
+          key="shall"
         >
           shall I keep you inb the loops
         </div>
       </ResponsiveGridLayout>
-    </div>
+    </motion.div>
   );
 };
 
