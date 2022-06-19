@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import { TabbingContext } from "../context/tabContext";
 import {
@@ -27,6 +27,7 @@ import { motion } from "framer-motion";
 import { Face } from "../ui/Face";
 import { Project } from "../ui/Project";
 import Image from "next/image";
+import { MapCard } from "../ui/Map";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -146,12 +147,12 @@ const Home: NextPage = () => {
           <Face />
         </div>
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
+          className={`flex overflow-hidden rounded-3xl box-shadow ${
             isTab2 ? "opacity-100" : "opacity-50"
           }`}
           key="map"
         >
-          map
+          <MapCard />
         </div>
         <div
           className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
@@ -171,6 +172,7 @@ const Home: NextPage = () => {
               alt="recroot"
               layout="fill"
               objectFit="cover"
+              priority
             />
           </Project>
         </div>
