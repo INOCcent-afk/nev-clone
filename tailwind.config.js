@@ -5,7 +5,13 @@ module.exports = {
     "./src/ui/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        laptop: "996px",
+
+        desktop: "1199px",
+      },
+    },
     colors: {
       white: "#ffffff",
       black: "#000000",

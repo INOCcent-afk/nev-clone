@@ -24,6 +24,9 @@ import {
 } from "../layoutGrids/projectsLayout";
 import { useWindowSize } from "../shared-components/useWindowSize";
 import { motion } from "framer-motion";
+import { Face } from "../ui/Face";
+import { Project } from "../ui/Project";
+import Image from "next/image";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -112,11 +115,11 @@ const Home: NextPage = () => {
         },
       }}
       animate="transitionIn"
-      initial="initial"
-      className="max-w-[400px] md:max-w-[800px] lg:max-w-[1200px] mx-auto"
+      initial="i5nitial"
+      className="max-w-[400px] laptop:max-w-[800px] desktop:max-w-[1200px] mx-auto"
     >
       <ResponsiveGridLayout
-        className="layout text-center"
+        className="layout"
         breakpoints={{ lg: 1199, md: 996, sm: 768, xs: 480, xxs: 0 }}
         layouts={{
           lg: layout.lg,
@@ -137,12 +140,10 @@ const Home: NextPage = () => {
         rowHeight={rowHeight as number}
       >
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
-            isTab2 ? "opacity-100" : "opacity-50"
-          }`}
+          className={`flex box-shadow ${isTab2 ? "opacity-100" : "opacity-50"}`}
           key="face"
         >
-          face
+          <Face />
         </div>
         <div
           className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
@@ -161,20 +162,30 @@ const Home: NextPage = () => {
           twitter
         </div>
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
-            isTab3 ? "opacity-100" : "opacity-50"
-          }`}
+          className={`flex box-shadow ${isTab3 ? "opacity-100" : "opacity-50"}`}
           key="project1"
         >
-          1st project
+          <Project bg="/recroot-bg.svg">
+            <Image
+              src="/recroot.png"
+              alt="recroot"
+              layout="fill"
+              objectFit="cover"
+            />
+          </Project>
         </div>
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
-            isTab3 ? "opacity-100" : "opacity-50"
-          }`}
+          className={`flex box-shadow ${isTab3 ? "opacity-100" : "opacity-50"}`}
           key="project2"
         >
-          2nd project
+          <Project bg="/vouch-for-bg.svg">
+            <Image
+              src="/vouch-for.png"
+              alt="vouch"
+              layout="fill"
+              objectFit="cover"
+            />
+          </Project>
         </div>
         <div
           className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
@@ -201,12 +212,12 @@ const Home: NextPage = () => {
           how it started
         </div>
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
-            isTab3 ? "opacity-100" : "opacity-50"
-          }`}
+          className={`flex box-shadow ${isTab3 ? "opacity-100" : "opacity-50"}`}
           key="project3"
         >
-          3rd project yellow
+          <Project bg="/wrap-bg.svg">
+            <Image src="/wrap.png" alt="wrap" layout="fill" objectFit="cover" />
+          </Project>
         </div>
         <div
           className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
