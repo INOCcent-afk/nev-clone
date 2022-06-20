@@ -9,7 +9,13 @@ const MotionMoonIcon = motion(Moon);
 export const ToggleMode = () => {
   const [isOn, setIsOn] = useState(false);
 
-  const toggleSwitch = () => setIsOn(!isOn);
+  const toggleSwitch = (e: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsOn(!isOn);
+  };
+
+  console.log(isOn);
 
   const spring = {
     type: "spring",
@@ -19,10 +25,10 @@ export const ToggleMode = () => {
 
   return (
     <div className="bg-white rounded-3xl w-full flex items-center justify-center">
-      <div
+      <motion.button
         className="w-[80px] h-[48px] bg-lightGray flex justify-start rounded-[50px] items-center px-2 cursor-pointer switch"
         data-ison={isOn}
-        onClick={toggleSwitch}
+        onTap={toggleSwitch}
       >
         <motion.div
           className="w-[36px] h-[36px] bg-black rounded-full flex items-center justify-center"
@@ -41,7 +47,7 @@ export const ToggleMode = () => {
             />
           )}
         </motion.div>
-      </div>
+      </motion.button>
     </div>
   );
 };
