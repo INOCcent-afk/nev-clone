@@ -36,7 +36,7 @@ export const Face = () => {
         }}
       >
         <MotionRefreshIcon animate={animate} transition={{ duration: 0.5 }} />
-        <span>Toggle lockdown</span>
+        <span className="ml-3">Toggle lockdown</span>
       </Button>
       <div className="relative h-[96px] w-[69px] md:h-[132px] md:w-[94px] desktop:h-[105px] desktop:w-[75px]">
         <motion.div
@@ -91,9 +91,9 @@ export const Face = () => {
       </div>
       <div className="">
         <p className="text-base tracking-wider md:tracking-widest">
-          I'm
+          Im
           <span className="px-2 text-5xl font-bold">nev</span>, a developer and
-          product designer from Ireland. I'm interested in React, Node, Product
+          product designer from Ireland. Im interested in React, Node, Product
           Design, Jamstack, Startups, Cryptocurrencies and Music.
         </p>
       </div>

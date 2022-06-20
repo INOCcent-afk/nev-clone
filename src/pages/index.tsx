@@ -28,6 +28,12 @@ import { Face } from "../ui/Face";
 import { Project } from "../ui/Project";
 import Image from "next/image";
 import { MapCard } from "../ui/Map";
+import { ArrowIcon } from "../icons/ArrowIcon";
+import { Twitter } from "../ui/Twitter";
+import { Started } from "../ui/Started";
+import { Shall } from "../ui/Shall";
+import { Spotify } from "../ui/Spotify";
+import { ToggleMode } from "../ui/ToggleMode";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -155,18 +161,20 @@ const Home: NextPage = () => {
           <MapCard />
         </div>
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
-            isTab2 ? "opacity-100" : "opacity-50"
-          }`}
+          className={`flex box-shadow ${isTab2 ? "opacity-100" : "opacity-50"}`}
           key="twitter"
         >
-          twitter
+          <Twitter />
         </div>
         <div
           className={`flex box-shadow ${isTab3 ? "opacity-100" : "opacity-50"}`}
           key="project1"
         >
-          <Project bg="/recroot-bg.svg">
+          <Project
+            bg="/recroot-bg.svg"
+            icon={<ArrowIcon />}
+            buttonText="Recroot"
+          >
             <Image
               src="/recroot.png"
               alt="recroot"
@@ -180,7 +188,11 @@ const Home: NextPage = () => {
           className={`flex box-shadow ${isTab3 ? "opacity-100" : "opacity-50"}`}
           key="project2"
         >
-          <Project bg="/vouch-for-bg.svg">
+          <Project
+            bg="/vouch-for-bg.svg"
+            icon={<ArrowIcon />}
+            buttonText="Vouch For"
+          >
             <Image
               src="/vouch-for.png"
               alt="vouch"
@@ -190,44 +202,36 @@ const Home: NextPage = () => {
           </Project>
         </div>
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
-            isTab1 ? "opacity-100" : "opacity-50"
-          }`}
+          className={`flex box-shadow ${isTab1 ? "opacity-100" : "opacity-50"}`}
           key="toggleMode"
         >
-          toggle light mode
+          <ToggleMode />
         </div>
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
-            isTab4 ? "opacity-100" : "opacity-50"
-          }`}
+          className={`flex box-shadow ${isTab4 ? "opacity-100" : "opacity-50"}`}
           key="spotify"
         >
-          spotify
+          <Spotify />
         </div>
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
-            isTab4 ? "opacity-100" : "opacity-50"
-          }`}
+          className={`flex box-shadow ${isTab4 ? "opacity-100" : "opacity-50"}`}
           key="started"
         >
-          how it started
+          <Started />
         </div>
         <div
           className={`flex box-shadow ${isTab3 ? "opacity-100" : "opacity-50"}`}
           key="project3"
         >
-          <Project bg="/wrap-bg.svg">
+          <Project bg="/wrap-bg.svg" icon={<ArrowIcon />} buttonText="Wrap">
             <Image src="/wrap.png" alt="wrap" layout="fill" objectFit="cover" />
           </Project>
         </div>
         <div
-          className={`bg-black text-white rounded-3xl flex items-center justify-center text-3xl font-bold box-shadow ${
-            isTab4 ? "opacity-100" : "opacity-50"
-          }`}
+          className={`flex box-shadow ${isTab4 ? "opacity-100" : "opacity-50"}`}
           key="shall"
         >
-          shall I keep you inb the loops
+          <Shall />
         </div>
       </ResponsiveGridLayout>
     </motion.div>

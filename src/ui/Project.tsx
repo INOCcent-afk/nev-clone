@@ -4,17 +4,27 @@ import { Button } from "./Button";
 interface ProjectProps {
   bg: string;
   children: ReactNode;
+  icon?: ReactNode;
+  buttonText?: string;
 }
 
-export const Project: FC<ProjectProps> = ({ bg, children }) => {
+export const Project: FC<ProjectProps> = ({
+  bg,
+  children,
+  icon,
+  buttonText,
+}) => {
   return (
     <div
       className="relative flex w-full rounded-3xl bg-white bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {children}
-      <div className="absolute bottom-3 left-3">
-        <Button>Click</Button>
+      <div className="absolute bottom-3 left-3 group">
+        <Button>
+          {buttonText && <span className="px-2">{buttonText}</span>}
+          {icon}
+        </Button>
       </div>
     </div>
   );
