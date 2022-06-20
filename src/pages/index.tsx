@@ -122,7 +122,7 @@ const Home: NextPage = () => {
         },
       }}
       animate="transitionIn"
-      initial="i5nitial"
+      initial="initial"
       className="max-w-[400px] laptop:max-w-[800px] desktop:max-w-[1200px] mx-auto"
     >
       <ResponsiveGridLayout

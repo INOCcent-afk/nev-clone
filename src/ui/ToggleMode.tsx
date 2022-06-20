@@ -37,10 +37,10 @@ export const ToggleMode = () => {
 
   return (
     <div className="bg-white dark:bg-mediumBlue rounded-3xl w-full border-2 border-white dark:border-extraLightBlue flex items-center justify-center">
-      <div
+      <motion.button
         className="w-[80px] h-[48px] bg-lightGray dark:bg-extraLightBlue flex justify-start rounded-[50px] items-center px-2 cursor-pointer switch"
         data-ison={isOn}
-        onClick={toggleSwitch}
+        onTap={toggleSwitch}
       >
         <motion.div
           className="w-[36px] h-[36px] bg-black rounded-full flex items-center justify-center"
@@ -59,7 +59,7 @@ export const ToggleMode = () => {
             />
           )}
         </motion.div>
-      </div>
+      </motion.button>
     </div>
   );
 };

@@ -6,10 +6,10 @@ export const Started = () => {
   return (
     <div className="bg-white border-2 border-white dark:bg-mediumBlue dark:border-extraLightBlue rounded-3xl w-full p-8 flex flex-col justify-between">
       <div className="flex flex-col gap-4 desktop:gap-2 dark:text-white">
-        <h4 className="text-3xl font-bold desktop:text-2xl">
+        <h4 className="text-xl md:text-3xl font-bold desktop:text-2xl">
           How it started vs. how its going
         </h4>
-        <p className="text-lg tracking-wider">
+        <p className="text-base md:text-lg tracking-wider">
           A short personal history as it relates to design and development, and
           how Ive found value in the cross-section between both disciplines.
         </p>
