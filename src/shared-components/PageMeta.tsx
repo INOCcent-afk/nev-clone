@@ -8,9 +8,9 @@ interface PageMetaTypes {
 }
 
 export const PageMeta: FC<PageMetaTypes> = ({
-  title = "Nev Flynn - Developer, Designer",
-  keywords = "Nev Flynn",
-  description = "Nev Flynn",
+  title = "Nev - Developer, Designer",
+  keywords = "Nev",
+  description = "Nev",
 }: PageMetaTypes) => {
   return (
     <Head>
@@ -18,7 +18,7 @@ export const PageMeta: FC<PageMetaTypes> = ({
       <meta name="keywords" content={keywords} />
       <meta name="description" content={description} />
       <meta charSet="utf-8" />
-      <link rel="icon" href="/favicon.webp" />
+      <link rel="icon" sizes="48x67" href="/favicon.webp" />
       <title>{title}</title>
     </Head>
   );
