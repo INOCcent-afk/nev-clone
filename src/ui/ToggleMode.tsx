@@ -7,9 +7,15 @@ const MotionSunIcon = motion(SunIcon);
 const MotionMoonIcon = motion(Moon);
 
 export const ToggleMode = () => {
+  const [theme, setTheme] = React.useState<string | null>(null);
+  const colorTheme = theme === "dark" ? "light" : "dark";
   const [isOn, setIsOn] = useState(false);
 
-  const toggleSwitch = () => setIsOn(!isOn);
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+
+    setTheme(colorTheme);
+  };
 
   const spring = {
     type: "spring",
@@ -17,10 +23,22 @@ export const ToggleMode = () => {
     damping: 10,
   };
 
+  React.useEffect(() => {
+    setTheme(window.localStorage.theme);
+  }, []);
+
+  React.useEffect(() => {
+    const root = document.documentElement;
+
+    root.classList.remove(colorTheme);
+    root.classList.add(theme as any);
+    window.localStorage.setItem("theme", theme as any);
+  }, [theme]);
+
   return (
-    <div className="bg-white rounded-3xl w-full flex items-center justify-center">
+    <div className="bg-white dark:bg-mediumBlue rounded-3xl w-full border-2 border-white dark:border-extraLightBlue flex items-center justify-center">
       <div
-        className="w-[80px] h-[48px] bg-lightGray flex justify-start rounded-[50px] items-center px-2 cursor-pointer switch"
+        className="w-[80px] h-[48px] bg-lightGray dark:bg-extraLightBlue flex justify-start rounded-[50px] items-center px-2 cursor-pointer switch"
         data-ison={isOn}
         onClick={toggleSwitch}
       >

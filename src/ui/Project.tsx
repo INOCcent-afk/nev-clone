@@ -16,7 +16,7 @@ export const Project: FC<ProjectProps> = ({
 }) => {
   return (
     <div
-      className="relative flex w-full rounded-3xl bg-white bg-cover bg-center bg-no-repeat"
+      className="relative flex w-full rounded-3xl bg-white bg-cover bg-center bg-no-repeat overflow-hidden dark:!bg-none dark:bg-mediumBlue border-2 border-[transparent] dark:border-extraLightBlue"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {children}

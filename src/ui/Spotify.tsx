@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const Spotify = () => {
   return (
-    <div className="flex flex-col justify-between py-8 px-8 bg-white w-full rounded-3xl">
+    <div className="flex flex-col justify-between py-8 px-8 border-2 border-white dark:border-extraLightBlue dark:bg-mediumBlue bg-white w-full rounded-3xl">
       <div className="relative w-14 h-14 laptop:w-9 laptop:h-9 desktop:w-14 desktop:h-14">
         <Image src="/spotify.svg" alt="spotify" layout="fill" />
       </div>
@@ -29,8 +29,8 @@ export const Spotify = () => {
           </div>
           Offline. Last played
         </span>
-        <h4 className="text-2xl font-bold ">I Dont Belong</h4>
-        <p>Fontaines D.C.</p>
+        <h4 className="text-2xl font-bold dark:text-white">I Dont Belong</h4>
+        <p className="dark:text-white">Fontaines D.C.</p>
       </div>
     </div>
   );

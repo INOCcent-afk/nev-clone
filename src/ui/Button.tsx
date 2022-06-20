@@ -21,7 +21,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`rounded-3xl px-2 py-2 bg-white text-black flex items-center border-btn ${
+      className={`rounded-3xl px-2 py-2 bg-white dark:bg-mediumBlue dark:text-white text-black flex items-center transition-shadow duration-300 shadow-[0px_0px_0px_1px_#f0f2f8] hover:shadow-[0px_0px_0px_5px_#f0f2f8] dark:shadow-extraLightBlue ${
         animateExtend ? "" : ""
       } ${additinalCN}`}
       {...props}

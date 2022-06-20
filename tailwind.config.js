@@ -4,6 +4,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/ui/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       screens: {
@@ -21,6 +22,11 @@ module.exports = {
       lightGray: "#f0f2f8",
       fontGray: "#bdc3c8",
       green: "#62dbbe",
+
+      darkBlue: "#090c10",
+      mediumBlue: "#0d1117",
+      lightBlue: "#21262d",
+      extraLightBlue: "#30363d",
     },
   },
   plugins: [],

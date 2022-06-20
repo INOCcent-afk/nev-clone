@@ -10,7 +10,7 @@ import { TabbingContextProvider } from "../context/tabContext";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <TabbingContextProvider>
-      <div className="bg-aurora pb-20 min-h-screen">
+      <div className="bg-aurora dark:bg-darkBlue pb-20 min-h-screen">
         <PageMeta />
         <Header />
         <Component {...pageProps} />

@@ -27,7 +27,7 @@ export const Face = () => {
   };
 
   return (
-    <div className="bg-white flex flex-col md:gap-5 desktop:gap-0 w-full rounded-3xl pb-2 pt-8 px-10 relative overflow-hidden">
+    <div className="bg-white flex flex-col md:gap-5 desktop:gap-0 w-full rounded-3xl pb-2 pt-8 px-10 relative overflow-hidden border-2 border-white dark:border-extraLightBlue dark:bg-mediumBlue">
       <Button
         additinalCN="absolute right-4 top-5"
         onClick={() => {
@@ -36,7 +36,7 @@ export const Face = () => {
         }}
       >
         <MotionRefreshIcon animate={animate} transition={{ duration: 0.5 }} />
-        <span className="ml-3">Toggle lockdown</span>
+        <span className="mx-3">Toggle lockdown</span>
       </Button>
       <div className="relative h-[96px] w-[69px] md:h-[132px] md:w-[94px] desktop:h-[105px] desktop:w-[75px]">
         <motion.div
@@ -56,7 +56,7 @@ export const Face = () => {
           onAnimationComplete={() => {
             controls.set("hide");
           }}
-          className="absolute bg-black w-1 h-1 rounded-full opacity-0 left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]"
+          className="absolute bg-black dark:bg-white w-1 h-1 rounded-full opacity-0 left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]"
         ></motion.div>
         <div className="absolute">
           <motion.div
@@ -90,7 +90,7 @@ export const Face = () => {
         </div>
       </div>
       <div className="">
-        <p className="text-base tracking-wider md:tracking-widest">
+        <p className="text-base tracking-wider md:tracking-widest dark:text-white">
           Im
           <span className="px-2 text-5xl font-bold">nev</span>, a developer and
           product designer from Ireland. Im interested in React, Node, Product

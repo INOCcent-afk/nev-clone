@@ -64,7 +64,7 @@ export const Header = () => {
         <Image src="/logo.svg" alt="Nev logo" width={72} height={24} />
       </div>
       <nav ref={containerRef}>
-        <ul className="flex px-2 py-1 rounded-3xl bg-gray items-center gap-2 relative">
+        <ul className="flex px-2 py-1 rounded-3xl bg-gray border border-gray dark:bg-mediumBlue dark:border-extraLightBlue items-center gap-2 relative">
           <motion.div
             key={tab}
             variants={{
@@ -78,31 +78,31 @@ export const Header = () => {
             }}
             animate={"move"}
             initial={false}
-            className={`absolute h-7 rounded-3xl left-0 bg-white`}
+            className={`absolute h-7 rounded-3xl left-0 bg-white dark:bg-extraLightBlue`}
           ></motion.div>
           <li
-            className="hover:opacity-50 transition-opacity ease-in-out duration-300 cursor-pointer px-3 py-1 z-10"
+            className="hover:opacity-50 transition-opacity ease-in-out duration-300 cursor-pointer px-3 py-1 z-10 dark:text-white"
             ref={allRef}
             onClick={() => setTab(1)}
           >
             All
           </li>
           <li
-            className="hover:opacity-50 transition-opacity ease-in-out duration-300 cursor-pointer px-3 py-1 z-10"
+            className="hover:opacity-50 transition-opacity ease-in-out duration-300 cursor-pointer px-3 py-1 z-10 dark:text-white"
             ref={aboutRef}
             onClick={() => setTab(2)}
           >
             About
           </li>
           <li
-            className="hover:opacity-50 transition-opacity ease-in-out duration-300 cursor-pointer px-3 py-1 z-10"
+            className="hover:opacity-50 transition-opacity ease-in-out duration-300 cursor-pointer px-3 py-1 z-10 dark:text-white"
             ref={projectsRef}
             onClick={() => setTab(3)}
           >
             Projects
           </li>
           <li
-            className="hover:opacity-50 transition-opacity ease-in-out duration-300 cursor-pointer px-3 py-1 z-10"
+            className="hover:opacity-50 transition-opacity ease-in-out duration-300 cursor-pointer px-3 py-1 z-10 dark:text-white"
             ref={mediaRef}
             onClick={() => setTab(4)}
           >
@@ -110,7 +110,7 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="hidden sm:block">Contact</div>
+      <div className="hidden sm:block dark:text-white">Contact</div>
     </header>
   );
 };
