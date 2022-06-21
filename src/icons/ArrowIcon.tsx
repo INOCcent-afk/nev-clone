@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
 
 export const ArrowIcon = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <svg
       id="Arrow.7"
@@ -17,7 +20,7 @@ export const ArrowIcon = () => {
           d="M14.581,7.05,7.05,14.581"
           transform="translate(-7.05 -7.012)"
           fill="none"
-          stroke="#0D1117"
+          stroke={theme === "dark" ? "white" : "#0D1117"}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5"
@@ -28,7 +31,7 @@ export const ArrowIcon = () => {
           d="M10,7l5.287.037.038,5.287"
           transform="translate(-7.756 -7)"
           fill="none"
-          stroke="#0D1117"
+          stroke={theme === "dark" ? "white" : "#0D1117"}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5"

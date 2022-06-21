@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { Moon } from "../icons/Moon";
 import { SunIcon } from "../icons/SunIcon";
+import { ThemeContext } from "../context/themeContext";
 
 const MotionSunIcon = motion(SunIcon);
 const MotionMoonIcon = motion(Moon);
 
 export const ToggleMode = () => {
-  const [theme, setTheme] = React.useState<string | null>(null);
-  const colorTheme = theme === "dark" ? "light" : "dark";
   const [isOn, setIsOn] = useState(false);
+  const { setTheme, colorTheme } = useContext(ThemeContext);
 
   const toggleSwitch = () => {
     setIsOn(!isOn);
@@ -22,18 +22,6 @@ export const ToggleMode = () => {
     stiffness: 100,
     damping: 10,
   };
-
-  React.useEffect(() => {
-    setTheme(window.localStorage.theme);
-  }, []);
-
-  React.useEffect(() => {
-    const root = document.documentElement;
-
-    root.classList.remove(colorTheme);
-    root.classList.add(theme as any);
-    window.localStorage.setItem("theme", theme as any);
-  }, [theme]);
 
   return (
     <div className="bg-white dark:bg-mediumBlue rounded-3xl w-full border-2 border-white dark:border-extraLightBlue flex items-center justify-center">

@@ -25,14 +25,8 @@ a {
   cursor: grab;
 }
 
-/* .tite.react-grid-placeholder {
-  background-color: red !important;
-  opacity: 1;
-  border-radius: 12px;
-} */
-
 .react-grid-item.react-grid-placeholder {
-  background-color: #ede8e8;
+  background-color: #30363d;
   opacity: 1;
   border-radius: 12px;
 }

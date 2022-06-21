@@ -34,12 +34,14 @@ import { Started } from "../ui/Started";
 import { Shall } from "../ui/Shall";
 import { Spotify } from "../ui/Spotify";
 import { ToggleMode } from "../ui/ToggleMode";
+import { ThemeContext } from "../context/themeContext";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const Home: NextPage = () => {
   const { tab } = useContext(TabbingContext);
   const [rowHeight, setRowHeight] = useState<number | null>();
+  const { theme } = useContext(ThemeContext);
 
   const [width] = useWindowSize();
 
@@ -147,7 +149,9 @@ const Home: NextPage = () => {
         rowHeight={rowHeight as number}
       >
         <div
-          className={`flex box-shadow ${isTab2 ? "opacity-100" : "opacity-50"}`}
+          className={`flex box-shadow tite ${
+            isTab2 ? "opacity-100" : "opacity-50"
+          }`}
           key="face"
         >
           <Face />
