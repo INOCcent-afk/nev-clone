@@ -228,7 +228,13 @@ const Home: NextPage = () => {
           key="project3"
         >
           <Project bg="/wrap-bg.svg" icon={<ArrowIcon />} buttonText="Wrap">
-            <Image src="/wrap.png" alt="wrap" layout="fill" objectFit="cover" />
+            <Image
+              src="/wrap.png"
+              alt="wrap"
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
           </Project>
         </div>
         <div
