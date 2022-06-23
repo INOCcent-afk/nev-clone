@@ -11,6 +11,10 @@ body {
     sans-serif;
 }
 
+body {
+  overscroll-behavior-y: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;

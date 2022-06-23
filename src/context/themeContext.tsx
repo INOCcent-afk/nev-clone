@@ -26,19 +26,20 @@ export const ThemeContext = createContext<IThemeContext>(
 );
 
 export const ThemeContextProvider = ({ children }: ThemeProps) => {
-  const [theme, setTheme] = useState<string | null>(null);
+  const [theme, setTheme] = useState<string | null>(
+    typeof window !== "undefined" && localStorage.theme
+      ? localStorage.theme
+      : "light"
+  );
   const colorTheme = theme === "light" ? "dark" : "light";
-
-  useEffect(() => {
-    setTheme(localStorage.getItem("theme"));
-  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
 
     root.classList.remove(colorTheme);
     root.classList.add(theme as any);
-    if (theme) {
+
+    if (typeof window !== "undefined") {
       window.localStorage.setItem("theme", theme as any);
     }
   }, [theme]);
