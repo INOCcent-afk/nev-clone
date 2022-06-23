@@ -9,7 +9,7 @@ const MotionMoonIcon = motion(Moon);
 
 export const ToggleMode = () => {
   const [isOn, setIsOn] = useState(false);
-  const { setTheme, colorTheme } = useContext(ThemeContext);
+  const { theme, setTheme, colorTheme } = useContext(ThemeContext);
 
   const toggleSwitch = () => {
     setIsOn(!isOn);
@@ -35,7 +35,7 @@ export const ToggleMode = () => {
           layout
           transition={spring}
         >
-          {isOn ? (
+          {theme === "dark" ? (
             <MotionSunIcon
               animate={{ scale: 1, rotate: 360 }}
               transition={{ duration: 0.3 }}
